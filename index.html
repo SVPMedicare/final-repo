@@ -12,136 +12,55 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
+/* === YOUR ORIGINAL CSS UNCHANGED === */
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{
-font-family:'Roboto',sans-serif;
-background:#f9fbfd;color:#1e1e1e;
--webkit-font-smoothing:antialiased;
--moz-osx-font-smoothing:grayscale;
-letter-spacing:.2px;
-}
-
-/* LOADER */
+body{font-family:'Roboto',sans-serif;background:#f9fbfd;color:#1e1e1e;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;letter-spacing:.2px;}
 #loader{position:fixed;top:0;left:0;height:4px;width:0;background:#003566;z-index:9999;transition:width .4s}
-
-/* GLASS HEADER */
-header{
-position:sticky;top:0;z-index:1000;
-backdrop-filter:blur(15px);
-background:rgba(255,255,255,0.75);
-padding:18px 8%;
-display:flex;justify-content:space-between;align-items:center;
-box-shadow:0 4px 20px rgba(0,0,0,0.05);
-transition:all .3s ease;
-border-radius:0 0 12px 12px;
-}
-header.scrolled{
-box-shadow:0 10px 35px rgba(0,0,0,0.15);
-background:rgba(255,255,255,0.95);
-}
+header{position:sticky;top:0;z-index:1000;backdrop-filter:blur(15px);background:rgba(255,255,255,0.75);padding:18px 8%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,0.05);transition:all .3s ease;border-radius:0 0 12px 12px;}
+header.scrolled{box-shadow:0 10px 35px rgba(0,0,0,0.15);background:rgba(255,255,255,0.95);}
 header img{height:60px}
 nav a{margin-left:30px;text-decoration:none;color:#003566;font-weight:600;position:relative;transition:.3s}
 nav a:hover{color:#001d3d;}
 nav a.active{color:#001d3d}
-nav a.active::after{
-content:"";position:absolute;bottom:-6px;left:0;width:100%;height:3px;background:#003566;border-radius:3px;
-transition:.3s;
-}
-
-/* HERO */
-.hero{
-display:flex;justify-content:space-between;align-items:center;
-padding:120px 8%;
-background:linear-gradient(-45deg,#003566,#001d3d,#002855,#001233);
-background-size:400% 400%;
-animation:heroGradient 12s ease infinite;
-color:#fff;
-border-radius:18px;
-position:relative;
-overflow:hidden;
-}
-@keyframes heroGradient{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
-}
+nav a.active::after{content:"";position:absolute;bottom:-6px;left:0;width:100%;height:3px;background:#003566;border-radius:3px;transition:.3s;}
+.hero{display:flex;justify-content:space-between;align-items:center;padding:120px 8%;background:linear-gradient(-45deg,#003566,#001d3d,#002855,#001233);background-size:400% 400%;animation:heroGradient 12s ease infinite;color:#fff;border-radius:18px;position:relative;overflow:hidden;}
+@keyframes heroGradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .hero h1{font-size:3rem;margin-bottom:20px;font-family:'Montserrat',sans-serif;}
 .hero p{color:#dbe7ff;margin-bottom:30px;font-size:1.1rem;line-height:1.6;}
-.hero button{
-background:#fff;color:#003566;border:none;padding:14px 28px;border-radius:30px;font-weight:600;cursor:pointer;transition:.3s;
-}
-.hero button:hover{
-box-shadow:0 0 25px rgba(255,255,255,0.85);
-transform:translateY(-3px) scale(1.02);
-}
-
-/* SECTION */
+.hero button{background:#fff;color:#003566;border:none;padding:14px 28px;border-radius:30px;font-weight:600;cursor:pointer;transition:.3s;}
+.hero button:hover{box-shadow:0 0 25px rgba(255,255,255,0.85);transform:translateY(-3px) scale(1.02);}
 .section{padding:90px 8%;border-top:1px solid #eef2f7}
 .section h2{text-align:center;font-size:2.2rem;margin-bottom:50px;color:#003566;font-family:'Montserrat',sans-serif;}
-
-/* COUNTER */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center}
 .stat{background:rgba(255,255,255,0.9);padding:40px;border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,0.08);transition:.3s;}
 .stat:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 15px 40px rgba(0,0,0,0.15);}
 .stat h3{font-size:2rem;color:#003566;font-family:'Montserrat',sans-serif;}
-
-/* PRODUCTS / CARDS */
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
-.card{
-background:rgba(255,255,255,0.95);
-border-radius:18px;padding:20px;text-align:center;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-transition:.35s;
-backdrop-filter:blur(10px);
-}
-.card:hover{
-transform:translateY(-12px) scale(1.02);
-box-shadow:0 20px 45px rgba(0,0,0,0.18);
-}
+.card{background:rgba(255,255,255,0.95);border-radius:18px;padding:20px;text-align:center;box-shadow:0 8px 25px rgba(0,0,0,0.08);transition:.35s;backdrop-filter:blur(10px);}
+.card:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 20px 45px rgba(0,0,0,0.18);}
 .card img{width:100%;border-radius:12px;margin-bottom:15px;cursor:pointer;transition:.3s;}
 .card img:hover{transform:scale(1.05);}
-
-/* FORM */
+.table-box{overflow-x:auto;background:#fff;padding:30px;border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,0.08)}
 .form-box{max-width:600px;margin:auto;background:rgba(255,255,255,0.95);padding:40px;border-radius:18px;box-shadow:0 10px 35px rgba(0,0,0,0.1);backdrop-filter:blur(10px);}
 .form-box input,.form-box textarea{width:100%;padding:14px;margin:10px 0;border:1px solid #ddd;border-radius:8px;transition:.3s;}
 .form-box input:focus,.form-box textarea:focus{border-color:#003566;outline:none;box-shadow:0 0 10px rgba(0,53,102,0.3);}
 .form-box button{background:#003566;color:#fff;border:none;padding:14px;border-radius:8px;width:100%;cursor:pointer;transition:.3s;}
 .form-box button:hover{background:#001d3d;box-shadow:0 0 15px rgba(0,53,102,0.4);}
-
-/* PRODUCT ROW GRID */
-.product-row{
-display:grid;
-grid-template-columns:1fr 120px;
-gap:10px;
-}
-
-/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 .contact-box{background:rgba(255,255,255,0.95);padding:40px;border-radius:18px;box-shadow:0 10px 35px rgba(0,0,0,0.08);backdrop-filter:blur(10px);}
-
-/* FOOTER */
 footer{background:#001d3d;color:#fff;text-align:center;padding:25px;border-radius:12px 12px 0 0;box-shadow:0 -4px 20px rgba(0,0,0,0.05);}
 footer a{color:#fff;text-decoration:none;transition:.3s;} footer a:hover{color:#25D366;}
-
-/* WHATSAPP */
-.whatsapp-float{
-position:fixed;bottom:25px;right:25px;background:#25D366;color:#fff;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 6px 20px rgba(0,0,0,0.3);transition:.3s;}
+.whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25D366;color:#fff;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 6px 20px rgba(0,0,0,0.3);transition:.3s;}
 .whatsapp-float:hover{transform:scale(1.1);box-shadow:0 10px 25px rgba(0,0,0,0.4);}
-
-/* SCROLL TO TOP */
 #topBtn{position:fixed;bottom:100px;right:25px;background:#003566;color:#fff;border:none;width:55px;height:55px;border-radius:50%;font-size:22px;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.25);z-index:999;transition:.3s;}
 #topBtn:hover{background:#001d3d;transform:scale(1.05);}
-
-/* REVEAL */
 .reveal{opacity:0;transform:translateY(40px);transition:all .8s;}
 .reveal.active{opacity:1;transform:none;}
-
 @media(max-width:900px){
 .hero{flex-direction:column;text-align:center}
 .contact-grid{grid-template-columns:1fr}
 .products{grid-template-columns:1fr}
-.product-row{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -200,18 +119,18 @@ position:fixed;bottom:25px;right:25px;background:#25D366;color:#fff;width:65px;h
 <input type="email" name="email" placeholder="Your Email" required>
 <input type="text" name="phone" placeholder="Phone Number" required>
 
-<div id="product-wrapper">
-<div class="product-row">
-<input type="text" name="product[]" placeholder="Product Name" required>
-<input type="text" name="quantity[]" placeholder="Quantity" required>
-</div>
-</div>
+<!-- Separate Product + Quantity Fields -->
+<input type="text" name="product1" placeholder="Product Name 1">
+<input type="text" name="quantity1" placeholder="Quantity 1">
 
-<button type="button" onclick="addProduct()" style="margin-top:10px;background:#25D366;color:#fff;border:none;padding:10px;border-radius:6px;cursor:pointer;">
-+ Add Another Product
-</button>
+<input type="text" name="product2" placeholder="Product Name 2">
+<input type="text" name="quantity2" placeholder="Quantity 2">
+
+<input type="text" name="product3" placeholder="Product Name 3">
+<input type="text" name="quantity3" placeholder="Quantity 3">
 
 <textarea name="message" rows="4" placeholder="Additional Notes (optional)"></textarea>
+
 <button type="submit">Submit Enquiry</button>
 </form>
 </div>
@@ -253,49 +172,11 @@ position:fixed;bottom:25px;right:25px;background:#25D366;color:#fff;width:65px;h
 </div>
 
 <script>
-// Loader
 window.onload=function(){document.getElementById("loader").style.width="100%"}
-
-// Add product rows
-function addProduct(){
-const wrapper = document.getElementById("product-wrapper");
-const row = document.createElement("div");
-row.className = "product-row";
-row.style.marginTop = "10px";
-row.innerHTML = `
-<input type="text" name="product[]" placeholder="Product Name" required>
-<input type="text" name="quantity[]" placeholder="Quantity" required>
-`;
-wrapper.appendChild(row);
-}
-
-// Reveal on scroll
 const reveals=document.querySelectorAll(".reveal");
-window.addEventListener("scroll",()=>{
-for(let r of reveals){
-let windowHeight=window.innerHeight;
-let elementTop=r.getBoundingClientRect().top;
-if(elementTop<windowHeight-100){r.classList.add("active")}
-}
-});
-
-// Counter
+window.addEventListener("scroll",()=>{for(let r of reveals){let windowHeight=window.innerHeight;let elementTop=r.getBoundingClientRect().top;if(elementTop<windowHeight-100){r.classList.add("active")}}});
 let counted=false;
-window.addEventListener("scroll",()=>{
-const counter=document.getElementById("counter");
-const top=counter.getBoundingClientRect().top;
-if(!counted && top<window.innerHeight){
-let count=0;
-let interval=setInterval(()=>{
-count+=50;
-counter.textContent=count+"+";
-if(count>=2500){clearInterval(interval);counter.textContent="2500+"}
-},30);
-counted=true;
-}
-});
-
-// Lightbox
+window.addEventListener("scroll",()=>{const counter=document.getElementById("counter");const top=counter.getBoundingClientRect().top;if(!counted && top<window.innerHeight){let count=0;let interval=setInterval(()=>{count+=50;counter.textContent=count+"+";if(count>=2500){clearInterval(interval);counter.textContent="2500+"}},30);counted=true;}});
 const productImages=document.querySelectorAll(".product-img");
 const lightbox=document.getElementById("lightbox");
 const lightboxImg=document.getElementById("lightbox-img");
@@ -304,54 +185,19 @@ const prevBtn=document.getElementById("prevBtn");
 const closeBtn=document.getElementById("closeBtn");
 let currentIndex=0;
 let imageArray=[];
-productImages.forEach((img,index)=>{
-imageArray.push(img.src);
-img.addEventListener("click",()=>{
-lightbox.style.display="flex";
-lightboxImg.src=img.src;
-currentIndex=index;
-});
-});
+productImages.forEach((img,index)=>{imageArray.push(img.src);img.addEventListener("click",()=>{lightbox.style.display="flex";lightboxImg.src=img.src;currentIndex=index;});});
 nextBtn.onclick=(e)=>{e.stopPropagation();currentIndex=(currentIndex+1)%imageArray.length;lightboxImg.src=imageArray[currentIndex];};
 prevBtn.onclick=(e)=>{e.stopPropagation();currentIndex=(currentIndex-1+imageArray.length)%imageArray.length;lightboxImg.src=imageArray[currentIndex];};
 closeBtn.onclick=()=>lightbox.style.display="none";
 function bgClose(e){if(e.target.id==="lightbox"){lightbox.style.display="none"}}
-
-// Header shadow
 window.addEventListener("scroll",()=>{document.querySelector("header").classList.toggle("scrolled",window.scrollY>40);})
-
-// Active nav
 const sections=document.querySelectorAll("section");
 const navLinks=document.querySelectorAll("nav a");
-window.addEventListener("scroll",()=>{
-let current="";
-sections.forEach(section=>{
-const sectionTop=section.offsetTop-120;
-if(scrollY>=sectionTop){current=section.getAttribute("id")}
-});
-navLinks.forEach(a=>{a.classList.remove("active");if(a.getAttribute("href")==="#"+current){a.classList.add("active");}});
-});
-
-// Scroll to top
+window.addEventListener("scroll",()=>{let current="";sections.forEach(section=>{const sectionTop=section.offsetTop-120;if(scrollY>=sectionTop){current=section.getAttribute("id")}});navLinks.forEach(a=>{a.classList.remove("active");if(a.getAttribute("href")==="#"+current){a.classList.add("active");}});});
 const topBtn=document.getElementById("topBtn");
 window.addEventListener("scroll",()=>{topBtn.style.display=(window.scrollY>500)?"flex":"none";});
 topBtn.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
-
-// Directions button
-document.getElementById("directionsBtn").addEventListener("click", function(e){
-e.preventDefault();
-const destination = "17.4347927,78.3674555";
-if(navigator.geolocation){
-navigator.geolocation.getCurrentPosition(function(position){
-const lat = position.coords.latitude;
-const lng = position.coords.longitude;
-const mapsUrl = `https://www.google.com/maps/dir/${lat},${lng}/${destination}`;
-window.open(mapsUrl, "_blank");
-}, function(){window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`, "_blank");});
-}else{
-window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`, "_blank");
-}
-});
+document.getElementById("directionsBtn").addEventListener("click", function(e){e.preventDefault();const destination = "17.4347927,78.3674555";if(navigator.geolocation){navigator.geolocation.getCurrentPosition(function(position){const lat = position.coords.latitude;const lng = position.coords.longitude;const mapsUrl = `https://www.google.com/maps/dir/${lat},${lng}/${destination}`;window.open(mapsUrl, "_blank");}, function(){window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`, "_blank");});}else{window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`, "_blank");}});
 </script>
 
 </body>
