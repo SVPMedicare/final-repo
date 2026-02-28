@@ -102,33 +102,19 @@ box-shadow:0 20px 45px rgba(0,0,0,0.18);
 .card img{width:100%;border-radius:12px;margin-bottom:15px;cursor:pointer;transition:.3s;}
 .card img:hover{transform:scale(1.05);}
 
-/* DIRECTOR ROUND IMAGE */
-#directors .card img{
-width:160px;height:160px;object-fit:cover;border-radius:50%;margin-bottom:15px;border:4px solid #003566;
-transition:.3s;
-}
-#directors .card img:hover{transform:scale(1.05);box-shadow:0 10px 25px rgba(0,0,0,0.15);}
-
-/* LIGHTBOX */
-#lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:none;align-items:center;justify-content:center;z-index:9999;}
-#lightbox img{max-width:90%;max-height:80%;border-radius:12px;box-shadow:0 0 35px rgba(255,255,255,0.3);animation:lightboxZoom .35s ease;}
-@keyframes lightboxZoom{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
-.lightbox-btn{position:absolute;top:50%;transform:translateY(-50%);background:#ffffffcc;border:none;font-size:28px;padding:10px 16px;cursor:pointer;border-radius:8px;}
-#prevBtn{left:40px} #nextBtn{right:40px}
-#closeBtn{position:absolute;top:30px;right:40px;background:#ffffffcc;border:none;font-size:22px;padding:8px 14px;cursor:pointer;border-radius:8px;}
-
-/* TABLE */
-.table-box{overflow-x:auto;background:#fff;padding:30px;border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,0.08)}
-table{width:100%;border-collapse:collapse}
-table th,table td{padding:12px;border-bottom:1px solid #eee;text-align:left}
-table th{background:#003566;color:#fff}
-
 /* FORM */
 .form-box{max-width:600px;margin:auto;background:rgba(255,255,255,0.95);padding:40px;border-radius:18px;box-shadow:0 10px 35px rgba(0,0,0,0.1);backdrop-filter:blur(10px);}
 .form-box input,.form-box textarea{width:100%;padding:14px;margin:10px 0;border:1px solid #ddd;border-radius:8px;transition:.3s;}
 .form-box input:focus,.form-box textarea:focus{border-color:#003566;outline:none;box-shadow:0 0 10px rgba(0,53,102,0.3);}
 .form-box button{background:#003566;color:#fff;border:none;padding:14px;border-radius:8px;width:100%;cursor:pointer;transition:.3s;}
 .form-box button:hover{background:#001d3d;box-shadow:0 0 15px rgba(0,53,102,0.4);}
+
+/* PRODUCT ROW GRID */
+.product-row{
+display:grid;
+grid-template-columns:1fr 120px;
+gap:10px;
+}
 
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
@@ -151,12 +137,11 @@ position:fixed;bottom:25px;right:25px;background:#25D366;color:#fff;width:65px;h
 .reveal{opacity:0;transform:translateY(40px);transition:all .8s;}
 .reveal.active{opacity:1;transform:none;}
 
-/* MEDIA */
 @media(max-width:900px){
 .hero{flex-direction:column;text-align:center}
-.hero img{margin-top:40px;width:300px}
 .contact-grid{grid-template-columns:1fr}
 .products{grid-template-columns:1fr}
+.product-row{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -210,11 +195,22 @@ position:fixed;bottom:25px;right:25px;background:#25D366;color:#fff;width:65px;h
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_subject" value="New Bulk Order Enquiry - SVP Medicare">
+
 <input type="text" name="name" placeholder="Your Name" required>
 <input type="email" name="email" placeholder="Your Email" required>
 <input type="text" name="phone" placeholder="Phone Number" required>
-<input type="text" name="product" placeholder="Product Name" required>
-<input type="text" name="quantity" placeholder="Quantity" required>
+
+<div id="product-wrapper">
+<div class="product-row">
+<input type="text" name="product[]" placeholder="Product Name" required>
+<input type="text" name="quantity[]" placeholder="Quantity" required>
+</div>
+</div>
+
+<button type="button" onclick="addProduct()" style="margin-top:10px;background:#25D366;color:#fff;border:none;padding:10px;border-radius:6px;cursor:pointer;">
++ Add Another Product
+</button>
+
 <textarea name="message" rows="4" placeholder="Additional Notes (optional)"></textarea>
 <button type="submit">Submit Enquiry</button>
 </form>
@@ -259,6 +255,19 @@ position:fixed;bottom:25px;right:25px;background:#25D366;color:#fff;width:65px;h
 <script>
 // Loader
 window.onload=function(){document.getElementById("loader").style.width="100%"}
+
+// Add product rows
+function addProduct(){
+const wrapper = document.getElementById("product-wrapper");
+const row = document.createElement("div");
+row.className = "product-row";
+row.style.marginTop = "10px";
+row.innerHTML = `
+<input type="text" name="product[]" placeholder="Product Name" required>
+<input type="text" name="quantity[]" placeholder="Quantity" required>
+`;
+wrapper.appendChild(row);
+}
 
 // Reveal on scroll
 const reveals=document.querySelectorAll(".reveal");
