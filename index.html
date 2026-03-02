@@ -15,11 +15,11 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
-font-family:'Roboto',sans-serif;
-background:#f9fbfd;color:#1e1e1e;
--webkit-font-smoothing:antialiased;
--moz-osx-font-smoothing:grayscale;
-letter-spacing:.2px;
+  font-family:'Roboto',sans-serif;
+  background:#f9fbfd;color:#1e1e1e;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  letter-spacing:.2px;
 }
 
 /* LOADER */
@@ -27,53 +27,53 @@ letter-spacing:.2px;
 
 /* GLASS HEADER */
 header{
-position:sticky;top:0;z-index:1000;
-backdrop-filter:blur(15px);
-background:rgba(255,255,255,0.75);
-padding:18px 8%;
-display:flex;justify-content:space-between;align-items:center;
-box-shadow:0 4px 20px rgba(0,0,0,0.05);
-transition:all .3s ease;
-border-radius:0 0 12px 12px;
+  position:sticky;top:0;z-index:1000;
+  backdrop-filter:blur(15px);
+  background:rgba(255,255,255,0.75);
+  padding:18px 8%;
+  display:flex;justify-content:space-between;align-items:center;
+  box-shadow:0 4px 20px rgba(0,0,0,0.05);
+  transition:all .3s ease;
+  border-radius:0 0 12px 12px;
 }
 header.scrolled{
-box-shadow:0 10px 35px rgba(0,0,0,0.15);
-background:rgba(255,255,255,0.95);
+  box-shadow:0 10px 35px rgba(0,0,0,0.15);
+  background:rgba(255,255,255,0.95);
 }
 header img{height:60px}
 nav a{margin-left:30px;text-decoration:none;color:#003566;font-weight:600;position:relative;transition:.3s}
 nav a:hover{color:#001d3d;}
 nav a.active{color:#001d3d}
 nav a.active::after{
-content:"";position:absolute;bottom:-6px;left:0;width:100%;height:3px;background:#003566;border-radius:3px;
-transition:.3s;
+  content:"";position:absolute;bottom:-6px;left:0;width:100%;height:3px;background:#003566;border-radius:3px;
+  transition:.3s;
 }
 
 /* HERO */
 .hero{
-display:flex;justify-content:space-between;align-items:center;
-padding:120px 8%;
-background:linear-gradient(-45deg,#003566,#001d3d,#002855,#001233);
-background-size:400% 400%;
-animation:heroGradient 12s ease infinite;
-color:#fff;
-border-radius:18px;
-position:relative;
-overflow:hidden;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:120px 8%;
+  background:linear-gradient(-45deg,#003566,#001d3d,#002855,#001233);
+  background-size:400% 400%;
+  animation:heroGradient 12s ease infinite;
+  color:#fff;
+  border-radius:18px;
+  position:relative;
+  overflow:hidden;
 }
 @keyframes heroGradient{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 .hero h1{font-size:3rem;margin-bottom:20px;font-family:'Montserrat',sans-serif;}
 .hero p{color:#dbe7ff;margin-bottom:30px;font-size:1.1rem;line-height:1.6;}
 .hero button{
-background:#fff;color:#003566;border:none;padding:14px 28px;border-radius:30px;font-weight:600;cursor:pointer;transition:.3s;
+  background:#fff;color:#003566;border:none;padding:14px 28px;border-radius:30px;font-weight:600;cursor:pointer;transition:.3s;
 }
 .hero button:hover{
-box-shadow:0 0 25px rgba(255,255,255,0.85);
-transform:translateY(-3px) scale(1.02);
+  box-shadow:0 0 25px rgba(255,255,255,0.85);
+  transform:translateY(-3px) scale(1.02);
 }
 
 /* SECTION */
@@ -81,24 +81,28 @@ transform:translateY(-3px) scale(1.02);
 .section h2{text-align:center;font-size:2.2rem;margin-bottom:50px;color:#003566;font-family:'Montserrat',sans-serif;}
 
 /* COUNTER */
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center;cursor:pointer;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center}
 .stat{background:rgba(255,255,255,0.9);padding:40px;border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,0.08);transition:.3s;}
 .stat:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 15px 40px rgba(0,0,0,0.15);}
 .stat h3{font-size:2rem;color:#003566;font-family:'Montserrat',sans-serif;}
-.stat a{text-decoration:none;color:#003566;}
+
+/* Clickable Across India Stat */
+.stat-btn { text-decoration:none; display:block; transition: transform 0.3s, box-shadow 0.3s; }
+.stat-btn .stat { cursor:pointer; }
+.stat-btn:hover .stat { transform: translateY(-5px) scale(1.02); box-shadow:0 15px 40px rgba(0,0,0,0.15); }
 
 /* PRODUCTS */
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
 .card{
-background:rgba(255,255,255,0.95);
-border-radius:18px;padding:20px;text-align:center;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-transition:.35s;
-backdrop-filter:blur(10px);
+  background:rgba(255,255,255,0.95);
+  border-radius:18px;padding:20px;text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  transition:.35s;
+  backdrop-filter:blur(10px);
 }
 .card:hover{
-transform:translateY(-12px) scale(1.02);
-box-shadow:0 20px 45px rgba(0,0,0,0.18);
+  transform:translateY(-12px) scale(1.02);
+  box-shadow:0 20px 45px rgba(0,0,0,0.18);
 }
 .card img{width:100%;border-radius:12px;margin-bottom:15px;cursor:pointer;transition:.3s;}
 .card img:hover{transform:scale(1.05);}
@@ -132,7 +136,7 @@ footer{background:#001d3d;color:#fff;text-align:center;padding:25px;border-radiu
 
 /* WHATSAPP */
 .whatsapp-float{
-position:fixed;bottom:25px;right:25px;background:#25D366;color:#fff;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 6px 20px rgba(0,0,0,0.3);transition:.3s;}
+  position:fixed;bottom:25px;right:25px;background:#25D366;color:#fff;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 6px 20px rgba(0,0,0,0.3);transition:.3s;}
 .whatsapp-float:hover{transform:scale(1.1);}
 
 /* SCROLL TO TOP */
@@ -170,17 +174,15 @@ nav a{margin-left:18px;font-size:14px}
 </div>
 </section>
 
+<!-- STATS -->
 <section class="section reveal">
 <div class="stats">
-<div class="stat"><h3 id="counter">0</h3><p>Clients</p></div>
-<div class="stat">
-  <h3><a href="map.html">Across India</a></h3>
-  <p>Supply Network</p>
-</div>
+  <div class="stat"><h3 id="counter">0</h3><p>Clients</p></div>
+  <a href="map.html" class="stat-btn"><div class="stat"><h3>Across India</h3><p>Supply Network</p></div></a>
 </div>
 </section>
 
-<section class="section reveal" id="products">
+  <section class="section reveal" id="products">
 <h2>Our Key Products</h2>
 <div class="products">
 
@@ -219,12 +221,10 @@ nav a{margin-left:18px;font-size:14px}
 <input type="tel" name="phone" placeholder="Phone Number" required>
 
 <div id="productRows">
-
 <div class="product-row">
 <input type="text" name="product[]" placeholder="Product Name" required>
 <input type="number" name="quantity[]" placeholder="Quantity" min="1" required>
 </div>
-
 </div>
 
 <button type="button" onclick="addProductRow()" style="margin:10px 0;background:#25D366">
@@ -241,23 +241,19 @@ nav a{margin-left:18px;font-size:14px}
 <section class="section reveal" id="contact">
 <h2>Contact Information</h2>
 <div class="contact-grid">
-
 <div class="contact-box">
 <p><strong>Phone:</strong> 9390494784</p>
 <p><strong>Email:</strong> info@svpmedicare.com</p>
 <p>SVP Medicare LLP<br>4th Floor, Plot No.21&22, Telecom Nagar,<br>Trendz Dwaraka, Gachibowli,<br>Hyderabad - 500032</p>
 </div>
-
 <div class="contact-box">
 <iframe src="https://www.google.com/maps?q=17.4347927,78.3674555&output=embed" width="100%" height="350" style="border:0;border-radius:15px"></iframe>
-
 <div style="text-align:center;margin-top:15px;">
 <a href="#" id="directionsBtn" style="display:inline-block;background:#003566;color:#fff;padding:12px 22px;border-radius:25px;text-decoration:none;font-weight:600;">
 <i class="fas fa-directions"></i> Get Directions
 </a>
 </div>
 </div>
-
 </div>
 </section>
 
@@ -282,15 +278,12 @@ nav a{margin-left:18px;font-size:14px}
 // Add product row
 function addProductRow(){
 const container=document.getElementById("productRows");
-
 const row=document.createElement("div");
 row.className="product-row";
-
 row.innerHTML=`
 <input type="text" name="product[]" placeholder="Product Name" required>
 <input type="number" name="quantity[]" placeholder="Quantity" min="1" required>
 `;
-
 container.appendChild(row);
 }
 
@@ -365,6 +358,5 @@ window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`,
 }
 });
 </script>
-
 </body>
 </html>
