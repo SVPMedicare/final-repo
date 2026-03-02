@@ -40,7 +40,23 @@ header.scrolled{
   box-shadow:0 10px 35px rgba(0,0,0,0.15);
   background:rgba(255,255,255,0.95);
 }
-header img{height:60px}
+
+/* Logo + Text */
+.logo-text {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.logo-text img {
+  height:60px;
+}
+.logo-text span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight:700;
+  font-size:1.5rem;
+  color:#003566;
+}
+
 nav a{margin-left:30px;text-decoration:none;color:#003566;font-weight:600;position:relative;transition:.3s}
 nav a:hover{color:#001d3d;}
 nav a.active{color:#001d3d}
@@ -158,12 +174,15 @@ nav a{margin-left:18px;font-size:14px}
 <div id="loader"></div>
 
 <header>
-<img src="logo.png" alt="SVP Medicare LLP Logo">
-<nav>
-<a href="#products">Products</a>
-<a href="#bulk">Bulk Orders</a>
-<a href="#contact">Contact</a>
-</nav>
+  <div class="logo-text">
+    <img src="logo.png" alt="SVP Medicare LLP Logo">
+    <span>SVP Medicare LLP</span>
+  </div>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#bulk">Bulk Orders</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <section class="hero" id="home">
@@ -182,30 +201,30 @@ nav a{margin-left:18px;font-size:14px}
 </div>
 </section>
 
-  <section class="section reveal" id="products">
+<!-- PRODUCTS -->
+<section class="section reveal" id="products">
 <h2>Our Key Products</h2>
 <div class="products">
-
-<div class="card"><img src="product2.png" class="product-img" alt="New Safexim 200"><h3>New Safexim 200</h3></div>
-<div class="card"><img src="product3.png" class="product-img" alt="New Tixylix DX"><h3>New Tixylix DX</h3></div>
-<div class="card"><img src="product4.png" class="product-img" alt="Limcee Zinc"><h3>Limcee Zinc</h3></div>
-<div class="card"><img src="product5.png" class="product-img" alt="Rzole DSR"><h3>Rzole DSR</h3></div>
-<div class="card"><img src="product6.png" class="product-img" alt="Megamox CV 625"><h3>Megamox CV 625</h3></div>
-<div class="card"><img src="product7.png" class="product-img" alt="Floxip 250"><h3>Floxip 250</h3></div>
-<div class="card"><img src="product8.png" class="product-img" alt="Floxip 500"><h3>Floxip 500</h3></div>
-<div class="card"><img src="product9.png" class="product-img" alt="Nicopenta DSR"><h3>Nicopenta DSR</h3></div>
-<div class="card"><img src="product10.png" class="product-img" alt="Nicodin Gargle"><h3>Nicodin Gargle</h3></div>
-<div class="card"><img src="product11.png" class="product-img" alt="Ozole-D"><h3>Ozole-D</h3></div>
-<div class="card"><img src="product12.png" class="product-img" alt="Esomecare-L"><h3>Esomecare-L</h3></div>
-<div class="card"><img src="product13.png" class="product-img" alt="Biozobid Plus"><h3>Biozobid Plus</h3></div>
-<div class="card"><img src="product14.png" class="product-img" alt="Azitough-500"><h3>Azitough-500</h3></div>
-<div class="card"><img src="product15.png" class="product-img" alt="Cefotox 1000mg"><h3>Cefotox 1000mg</h3></div>
-<div class="card"><img src="product16.png" class="product-img" alt="Effimax 500mg"><h3>Effimax 500mg</h3></div>
-<div class="card"><img src="product17.png" class="product-img" alt="Piprashield 4.5g"><h3>Piprashield 4.5g</h3></div>
-
+  <div class="card"><img src="product2.png" class="product-img" alt="New Safexim 200"><h3>New Safexim 200</h3></div>
+  <div class="card"><img src="product3.png" class="product-img" alt="New Tixylix DX"><h3>New Tixylix DX</h3></div>
+  <div class="card"><img src="product4.png" class="product-img" alt="Limcee Zinc"><h3>Limcee Zinc</h3></div>
+  <div class="card"><img src="product5.png" class="product-img" alt="Rzole DSR"><h3>Rzole DSR</h3></div>
+  <div class="card"><img src="product6.png" class="product-img" alt="Megamox CV 625"><h3>Megamox CV 625</h3></div>
+  <div class="card"><img src="product7.png" class="product-img" alt="Floxip 250"><h3>Floxip 250</h3></div>
+  <div class="card"><img src="product8.png" class="product-img" alt="Floxip 500"><h3>Floxip 500</h3></div>
+  <div class="card"><img src="product9.png" class="product-img" alt="Nicopenta DSR"><h3>Nicopenta DSR</h3></div>
+  <div class="card"><img src="product10.png" class="product-img" alt="Nicodin Gargle"><h3>Nicodin Gargle</h3></div>
+  <div class="card"><img src="product11.png" class="product-img" alt="Ozole-D"><h3>Ozole-D</h3></div>
+  <div class="card"><img src="product12.png" class="product-img" alt="Esomecare-L"><h3>Esomecare-L</h3></div>
+  <div class="card"><img src="product13.png" class="product-img" alt="Biozobid Plus"><h3>Biozobid Plus</h3></div>
+  <div class="card"><img src="product14.png" class="product-img" alt="Azitough-500"><h3>Azitough-500</h3></div>
+  <div class="card"><img src="product15.png" class="product-img" alt="Cefotox 1000mg"><h3>Cefotox 1000mg</h3></div>
+  <div class="card"><img src="product16.png" class="product-img" alt="Effimax 500mg"><h3>Effimax 500mg</h3></div>
+  <div class="card"><img src="product17.png" class="product-img" alt="Piprashield 4.5g"><h3>Piprashield 4.5g</h3></div>
 </div>
 </section>
 
+<!-- BULK ORDER FORM -->
 <section class="section reveal" id="bulk">
 <h2>Bulk Order Enquiry</h2>
 <div class="form-box">
@@ -238,6 +257,7 @@ nav a{margin-left:18px;font-size:14px}
 </div>
 </section>
 
+<!-- CONTACT -->
 <section class="section reveal" id="contact">
 <h2>Contact Information</h2>
 <div class="contact-grid">
@@ -360,4 +380,3 @@ window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`,
 </script>
 </body>
 </html>
-
