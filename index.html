@@ -81,10 +81,11 @@ transform:translateY(-3px) scale(1.02);
 .section h2{text-align:center;font-size:2.2rem;margin-bottom:50px;color:#003566;font-family:'Montserrat',sans-serif;}
 
 /* COUNTER */
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center;cursor:pointer;}
 .stat{background:rgba(255,255,255,0.9);padding:40px;border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,0.08);transition:.3s;}
 .stat:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 15px 40px rgba(0,0,0,0.15);}
 .stat h3{font-size:2rem;color:#003566;font-family:'Montserrat',sans-serif;}
+.stat a{text-decoration:none;color:#003566;}
 
 /* PRODUCTS */
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
@@ -172,7 +173,10 @@ nav a{margin-left:18px;font-size:14px}
 <section class="section reveal">
 <div class="stats">
 <div class="stat"><h3 id="counter">0</h3><p>Clients</p></div>
-<div class="stat"><h3>Across India</h3><p>Supply Network</p></div>
+<div class="stat">
+  <h3><a href="map.html">Across India</a></h3>
+  <p>Supply Network</p>
+</div>
 </div>
 </section>
 
