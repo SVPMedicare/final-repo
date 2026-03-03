@@ -379,7 +379,33 @@ window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`,
 window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`,"_blank");
 }
 });
+  // Format Bulk Order Email
+document.querySelector("form").addEventListener("submit", function(){
+
+const name=document.querySelector("input[name='name']").value;
+const email=document.querySelector("input[name='email']").value;
+const phone=document.querySelector("input[name='phone']").value;
+
+const products=document.querySelectorAll("input[name='product[]']");
+const quantities=document.querySelectorAll("input[name='quantity[]']");
+
+let message="BULK ORDER ENQUIRY FORM\n\n";
+message+="Name: "+name+"\n";
+message+="Contact No: "+phone+"\n";
+message+="Email: "+email+"\n\n";
+message+="----------------------------------\n";
+message+="Product        Quantity\n";
+message+="----------------------------------\n";
+
+for(let i=0;i<products.length;i++){
+message+=products[i].value+"        "+quantities[i].value+"\n";
+}
+
+document.getElementById("finalMessage").value=message;
+
+});
 </script>
 </body>
 </html>
+
 
