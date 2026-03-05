@@ -264,7 +264,7 @@ nav a{margin-left:18px;font-size:14px}
 
 <div id="productRows">
 <div class="product-row">
-<input type="text" name="product[]" placeholder="Product Name" required>
+<input type="text" name="product[]" placeholder="Product Name" list="productSuggestions" required>
 <input type="number" name="quantity[]" placeholder="Quantity" min="1" required>
 <i class="fa-solid fa-trash remove-product" onclick="removeProductRow(this)"></i>
 </div>
@@ -304,7 +304,24 @@ nav a{margin-left:18px;font-size:14px}
 <footer>
 <p>© 2025 SVP Medicare LLP | Pharmaceutical Distributor</p>
 </footer>
-
+<datalist id="productSuggestions">
+<option value="New Safexim 200">
+<option value="New Tixylix DX">
+<option value="Limcee Zinc">
+<option value="Rzole DSR">
+<option value="Megamox CV 625">
+<option value="Floxip 250">
+<option value="Floxip 500">
+<option value="Nicopenta DSR">
+<option value="Nicodin Gargle">
+<option value="Ozole-D">
+<option value="Esomecare-L">
+<option value="Biozobid Plus">
+<option value="Azitough-500">
+<option value="Cefotox 1000mg">
+<option value="Effimax 500mg">
+<option value="Piprashield 4.5g">
+</datalist>
 <a href="https://wa.me/919390494784?text=Hello%20SVP%20Medicare,%20I%20need%20bulk%20supply" class="whatsapp-float" target="_blank">
 <i class="fab fa-whatsapp"></i>
 </a>
@@ -325,7 +342,7 @@ const container=document.getElementById("productRows");
 const row=document.createElement("div");
 row.className="product-row";
 row.innerHTML=`
-<input type="text" name="product[]" placeholder="Product Name" required>
+<input type="text" name="product[]" placeholder="Product Name" list="productSuggestions" required>
 <input type="number" name="quantity[]" placeholder="Quantity" min="1" required>
 <i class="fa-solid fa-trash remove-product" onclick="removeProductRow(this)"></i>
 `;
@@ -433,6 +450,7 @@ icon.parentElement.remove();
 </script>
 </body>
 </html>
+
 
 
 
