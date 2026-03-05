@@ -139,10 +139,17 @@ nav a.active::after{
 .form-box button:hover{background:#001d3d;box-shadow:0 0 15px rgba(0,53,102,0.4);}
 
 /* NEW: PRODUCT ROW */
-.product-row{display:flex;gap:10px;margin-top:10px;}
-.product-row input{flex:1;}
-@media(max-width:600px){.product-row{flex-direction:column;}}
+.remove-product{
+color:#888;
+cursor:pointer;
+font-size:18px;
+display:flex;
+align-items:center;
+}
 
+.remove-product:hover{
+color:#d11a2a;
+}
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 .contact-box{background:rgba(255,255,255,0.95);padding:40px;border-radius:18px;box-shadow:0 10px 35px rgba(0,0,0,0.08);backdrop-filter:blur(10px);}
@@ -245,6 +252,7 @@ nav a{margin-left:18px;font-size:14px}
 <div class="product-row">
 <input type="text" name="product[]" placeholder="Product Name" required>
 <input type="number" name="quantity[]" placeholder="Quantity" min="1" required>
+<i class="fa-solid fa-trash remove-product" onclick="removeProductRow(this)"></i>
 </div>
 </div>
 
@@ -305,6 +313,7 @@ row.className="product-row";
 row.innerHTML=`
 <input type="text" name="product[]" placeholder="Product Name" required>
 <input type="number" name="quantity[]" placeholder="Quantity" min="1" required>
+<i class="fa-solid fa-trash remove-product" onclick="removeProductRow(this)"></i>
 `;
 container.appendChild(row);
 }
@@ -404,7 +413,11 @@ message+=products[i].value+"        "+quantities[i].value+"\n";
 document.getElementById("finalMessage").value=message;
 
 });
+function removeProductRow(icon){
+icon.parentElement.remove();
+}
 </script>
 </body>
 </html>
+
 
