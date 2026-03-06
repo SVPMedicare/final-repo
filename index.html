@@ -429,48 +429,23 @@ const phone=document.querySelector("input[name='phone']").value;
 const products=document.querySelectorAll("input[name='product[]']");
 const quantities=document.querySelectorAll("input[name='quantity[]']");
 
-let tableRows="";
+let message="BULK ORDER ENQUIRY FORM\n\n";
+message+="Name: "+name+"\n";
+message+="Contact No: "+phone+"\n";
+message+="Email: "+email+"\n\n";
+message+="----------------------------------\n";
+message+="Product        Quantity\n";
+message+="----------------------------------\n";
 
 for(let i=0;i<products.length;i++){
-let num=(i+1).toString().padStart(2,"0");
-
-tableRows+=`
-<tr>
-<td>${num}</td>
-<td>${products[i].value}</td>
-<td>${quantities[i].value}</td>
-</tr>
-`;
+message+=products[i].value+"        "+quantities[i].value+"\n";
 }
-
-let message=`
-<h2 style="background:#5b93d3;color:black;padding:15px;text-align:center;">
-BULK ORDER ENQUIRY FORM
-</h2>
-
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-<tr><td><b>Name</b></td><td>${name}</td></tr>
-<tr><td><b>Email</b></td><td>${email}</td></tr>
-<tr><td><b>Contact No</b></td><td>${phone}</td></tr>
-</table>
-
-<br>
-
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-<tr style="background:#5b93d3">
-<th>S/No</th>
-<th>Product Name</th>
-<th>Quantity</th>
-</tr>
-
-${tableRows}
-
-</table>
-`;
 
 document.getElementById("finalMessage").value=message;
 
 });
+function removeProductRow(icon){
+icon.parentElement.remove();
 }
 </script>
 </body>
