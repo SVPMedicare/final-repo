@@ -258,9 +258,9 @@ nav a{margin-left:18px;font-size:14px}
 <input type="hidden" name="_format" value="plain">
 <input type="hidden" name="message" id="finalMessage">
 
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<input type="tel" name="phone" placeholder="Phone Number" required>
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="email" id="email" placeholder="Your Email" required>
+<input type="tel" id="phone" placeholder="Phone Number" required>
 
 <div id="productRows">
 <div class="product-row">
@@ -422,10 +422,10 @@ window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`,
   // Format Bulk Order Email
 document.querySelector("form").addEventListener("submit", function(){
 
-const name=document.querySelector("input[name='name']").value;
-const email=document.querySelector("input[name='email']").value;
-const phone=document.querySelector("input[name='phone']").value;
-
+const name=document.getElementById("name").value;
+const email=document.getElementById("email").value;
+const phone=document.getElementById("phone").value;
+  
 const products=document.querySelectorAll("input[name='product[]']");
 const quantities=document.querySelectorAll("input[name='quantity[]']");
 
@@ -450,4 +450,5 @@ icon.parentElement.remove();
 </script>
 </body>
 </html>
+
 
