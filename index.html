@@ -449,7 +449,13 @@ document.getElementById("finalMessage").value=message;
 
 });
 function removeProductRow(icon){
+const rows = document.querySelectorAll(".product-row");
+
+if(rows.length > 1){
 icon.parentElement.remove();
+}else{
+alert("At least one product must remain.");
+}
 }
 </script>
 </body>
