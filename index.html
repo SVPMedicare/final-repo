@@ -438,9 +438,13 @@ message+="Product        Quantity\n";
 message+="----------------------------------\n";
 
 for(let i=0;i<products.length;i++){
-message+=products[i].value+"        "+quantities[i].value+"\n";
+message+=products[i].value.padEnd(22," ") + quantities[i].value + "\n";
 }
+const notes=document.getElementById("notes").value;
 
+if(notes.trim()!==""){
+message+="\nNotes: "+notes+"\n";
+}
 document.getElementById("finalMessage").value=message;
 
 });
@@ -450,8 +454,3 @@ icon.parentElement.remove();
 </script>
 </body>
 </html>
-
-
-
-
-
