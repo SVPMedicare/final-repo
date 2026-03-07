@@ -342,8 +342,8 @@ const container=document.getElementById("productRows");
 const row=document.createElement("div");
 row.className="product-row";
 row.innerHTML=`
-<input type="text" name="product[]" placeholder="Product Name" list="productSuggestions" required>
-<input type="number" name="quantity[]" placeholder="Quantity" min="1" required>
+<input type="text" class="product" placeholder="Product Name" list="productSuggestions" required>
+<input type="number" class="quantity" placeholder="Quantity" min="1" required>
 <i class="fa-solid fa-trash remove-product" onclick="removeProductRow(this)"></i>
 `;
 container.appendChild(row);
@@ -426,9 +426,9 @@ const name=document.getElementById("name").value;
 const email=document.getElementById("email").value;
 const phone=document.getElementById("phone").value;
   
-const products=document.querySelectorAll("input[name='product[]']");
-const quantities=document.querySelectorAll("input[name='quantity[]']");
-
+const products=document.querySelectorAll(".product");
+const quantities=document.querySelectorAll(".quantity");
+  
 let message="BULK ORDER ENQUIRY FORM\n\n";
 message+="Name: "+name+"\n";
 message+="Contact No: "+phone+"\n";
@@ -450,5 +450,6 @@ icon.parentElement.remove();
 </script>
 </body>
 </html>
+
 
 
