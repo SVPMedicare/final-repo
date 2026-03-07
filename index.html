@@ -264,8 +264,8 @@ nav a{margin-left:18px;font-size:14px}
 
 <div id="productRows">
 <div class="product-row">
-<input type="text" name="product[]" placeholder="Product Name" list="productSuggestions" required>
-<input type="number" name="quantity[]" placeholder="Quantity" min="1" required>
+<input type="text" class="product" placeholder="Product Name" list="productSuggestions" required>
+<input type="number" class="quantity" placeholder="Quantity" min="1" required>
 <i class="fa-solid fa-trash remove-product" onclick="removeProductRow(this)"></i>
 </div>
 </div>
@@ -274,7 +274,7 @@ nav a{margin-left:18px;font-size:14px}
 ➕ Add Another Product
 </button>
 
-<textarea name="notes" rows="4" placeholder="Additional Notes (optional)"></textarea>
+<textarea id="notes" rows="4" placeholder="Additional Notes (optional)"></textarea>
 
 <button type="submit">Submit Enquiry</button>
 </form>
@@ -450,6 +450,7 @@ icon.parentElement.remove();
 </script>
 </body>
 </html>
+
 
 
 
